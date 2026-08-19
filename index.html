@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Me Hizo Comprarlo 🙈✨ | Los que SÍ funcionan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================
+     TOKENS
+  ============================ */
+  :root{
+    --bg: #0a0a0a;
+    --bg-card: rgba(255,255,255,0.045);
+    --border-card: rgba(255,255,255,0.09);
+    --pink: #FE2C55;
+    --cyan: #25F4EE;
+    --text: #F5F5F7;
+    --text-dim: #A8A8B3;
+    --text-mute: #6f6f78;
+    --radius-lg: 22px;
+    --radius-sm: 999px;
+    --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --maxw: 1180px;
+  }
+
+  *,*::before,*::after{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* subtle film-grain texture over the whole page, gives depth to the flat black */
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: .05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  img, svg{ display:block; max-width: 100%; }
+
+  a{ color: inherit; }
+
+  :focus-visible{
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 48px);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================
+     HEADER
+  ============================ */
+  header.hero{
+    position: relative;
+    padding: clamp(56px, 10vw, 96px) 0 clamp(48px, 8vw, 72px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* ambient glow blobs — pink top-left, cyan bottom-right, TikTok's own duotone */
+  header.hero::before,
+  header.hero::after{
+    content:"";
+    position:absolute;
+    width: 55vw;
+    height: 55vw;
+    max-width: 620px;
+    max-height: 620px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: .28;
+  }
+  header.hero::before{
+    background: var(--pink);
+    top: -18%;
+    left: -14%;
+  }
+  header.hero::after{
+    background: var(--cyan);
+    bottom: -30%;
+    right: -12%;
+    opacity: .18;
+  }
+
+  /* floating sound-note icons drifting up, echoing TikTok's audio-driven feed */
+  .note{
+    position: absolute;
+    z-index: -1;
+    color: var(--text);
+    opacity: .12;
+    font-size: 22px;
+    animation: drift 14s linear infinite;
+    user-select: none;
+  }
+  .note:nth-child(1){ left: 6%;  top: 85%; font-size: 26px; animation-duration: 16s; animation-delay: 0s; color: var(--pink); }
+  .note:nth-child(2){ left: 18%; top: 95%; font-size: 16px; animation-duration: 11s; animation-delay: 2s; }
+  .note:nth-child(3){ left: 82%; top: 90%; font-size: 20px; animation-duration: 15s; animation-delay: 1s; color: var(--cyan); }
+  .note:nth-child(4){ left: 92%; top: 80%; font-size: 14px; animation-duration: 10s; animation-delay: 3.5s; }
+  .note:nth-child(5){ left: 45%; top: 100%; font-size: 18px; animation-duration: 13s; animation-delay: 4.5s; color: var(--pink); }
+
+  @keyframes drift{
+    0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+    10%  { opacity: .16; }
+    90%  { opacity: .1; }
+    100% { transform: translateY(-260px) rotate(18deg); opacity: 0; }
+  }
+
+  .kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-card);
+    padding: 7px 14px 7px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 22px;
+  }
+  .kicker .dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--pink);
+    box-shadow: 0 0 8px 1px var(--pink);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: .45; transform: scale(.8); }
+  }
+
+  .hero-title{
+    font-size: clamp(2.1rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    max-width: 14ch;
+  }
+
+  /* signature: chromatic-aberration "glitch" split, TikTok's own RGB-offset language */
+  .glitch{
+    color: #fff;
+    text-shadow: -2px 0 var(--pink), 2px 0 var(--cyan);
+    animation: glitchFlicker 6.5s infinite;
+    display: inline;
+  }
+  @keyframes glitchFlicker{
+    0%, 92%, 100% { text-shadow: -2px 0 var(--pink), 2px 0 var(--cyan); transform: translate(0,0); }
+    93%           { text-shadow: -6px 0 var(--pink), 6px 0 var(--cyan); transform: translate(-2px,1px); }
+    95%           { text-shadow: 5px 0 var(--pink), -5px 0 var(--cyan); transform: translate(2px,-1px); }
+    97%           { text-shadow: -2px 0 var(--pink), 2px 0 var(--cyan); transform: translate(0,0); }
+  }
+
+  .hero-emoji{ display:inline-block; margin-left: 6px; }
+
+  .hero-edition{
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(.95rem, 2vw, 1.15rem);
+    font-weight: 600;
+    color: var(--text);
+    background: rgba(37,244,238,0.08);
+    border: 1px solid rgba(37,244,238,0.35);
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    margin: 0 0 26px;
+  }
+  .hero-edition strong{ color: var(--cyan); font-weight: 800; margin: 0 4px; }
+
+  .hero-sub{
+    max-width: 52ch;
+    font-size: clamp(.98rem, 2vw, 1.08rem);
+    line-height: 1.65;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* ============================
+     SECTION LABEL
+  ============================ */
+  .section-label{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 28px;
+    color: var(--text-dim);
+    font-weight: 700;
+    letter-spacing: .02em;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+  }
+  .section-label .line{
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-card), transparent);
+  }
+  .section-label span{ color: var(--text); }
+
+  /* ============================
+     GRID + CARDS
+  ============================ */
+  main{ position: relative; z-index: 2; padding-bottom: clamp(60px, 10vw, 100px); }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(20px, 3vw, 28px);
+  }
+
+  .card{
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(14px);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+  }
+
+  .card:hover,
+  .card:focus-within{
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.16);
+    box-shadow:
+      0 0 0 1px rgba(37,244,238,0.25),
+      0 22px 50px -18px rgba(254,44,85,0.45),
+      0 10px 30px -10px rgba(37,244,238,0.25);
+  }
+
+  .card-media{
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .media-1{ background:
+      radial-gradient(120% 120% at 20% 15%, rgba(254,44,85,.40), transparent 55%),
+      radial-gradient(120% 120% at 85% 85%, rgba(37,244,238,.18), transparent 55%),
+      #131313; }
+  .media-2{ background:
+      radial-gradient(120% 120% at 80% 20%, rgba(37,244,238,.42), transparent 55%),
+      radial-gradient(120% 120% at 15% 85%, rgba(254,44,85,.18), transparent 55%),
+      #131313; }
+  .media-3{ background:
+      radial-gradient(120% 120% at 50% 0%, rgba(254,44,85,.30), transparent 55%),
+      radial-gradient(120% 120% at 50% 100%, rgba(37,244,238,.30), transparent 55%),
+      #131313; }
+
+  .media-icon{
+    font-size: 68px;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.5));
+    transition: transform .35s ease;
+  }
+  .card:hover .media-icon{ transform: scale(1.08) translateY(-2px); }
+
+  .badge{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 6px 13px;
+    border-radius: var(--radius-sm);
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(6px);
+  }
+  .badge-pink{ color: var(--pink); border: 1px solid rgba(254,44,85,0.55); }
+  .badge-cyan{ color: var(--cyan); border: 1px solid rgba(37,244,238,0.55); }
+
+  .card-body{
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-product{
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+
+  .card-title{
+    margin: 0 0 12px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--text);
+  }
+
+  .card-review{
+    margin: 0 0 22px;
+    font-size: .945rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    flex: 1;
+  }
+  .card-review em{
+    color: var(--text);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .cta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    padding: 15px 18px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: .93rem;
+    line-height: 1.35;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+  }
+
+  .cta-pink{
+    background: var(--pink);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    box-shadow: 0 10px 24px -8px rgba(254,44,85,.65);
+  }
+  .cta-pink:hover{
+    background: var(--cyan);
+    color: #06090a;
+    text-shadow: none;
+    box-shadow: 0 10px 26px -8px rgba(37,244,238,.6);
+    transform: translateY(-2px);
+  }
+
+  .cta-cyan{
+    background: var(--cyan);
+    color: #06090a;
+    box-shadow: 0 10px 24px -8px rgba(37,244,238,.55);
+  }
+  .cta-cyan:hover{
+    background: var(--pink);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    box-shadow: 0 10px 26px -8px rgba(254,44,85,.65);
+    transform: translateY(-2px);
+  }
+
+  .cta:active{ transform: translateY(0) scale(.98); }
+
+  /* ============================
+     FOOTER
+  ============================ */
+  footer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 30px 20px 44px;
+    color: var(--text-mute);
+    font-size: .83rem;
+    line-height: 1.6;
+    border-top: 1px solid var(--border-card);
+  }
+  footer strong{ color: var(--text-dim); }
+
+  /* ============================
+     RESPONSIVE TWEAKS
+  ============================ */
+  @media (max-width: 480px){
+    .hero-title{ max-width: 100%; }
+    .card-media{ height: 170px; }
+    .media-icon{ font-size: 56px; }
+  }
+
+  /* ============================
+     ACCESSIBILITY: reduced motion
+  ============================ */
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .glitch{ animation: none; text-shadow: -2px 0 var(--pink), 2px 0 var(--cyan); }
+    .note{ animation: none; opacity: 0; }
+    .kicker .dot{ animation: none; }
+    .card, .cta, .media-icon{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <span class="note" aria-hidden="true">♪</span>
+    <span class="note" aria-hidden="true">♫</span>
+    <span class="note" aria-hidden="true">♪</span>
+    <span class="note" aria-hidden="true">♬</span>
+    <span class="note" aria-hidden="true">♪</span>
+
+    <div class="wrap">
+      <span class="kicker"><span class="dot" aria-hidden="true"></span> Directo desde tu For You Page</span>
+
+      <h1 class="hero-title">
+        <span class="glitch" data-text="TikTok Me Hizo Comprarlo">TikTok Me Hizo Comprarlo</span>
+        <span class="hero-emoji" aria-hidden="true">🙈✨</span>
+      </h1>
+
+      <p class="hero-edition">Edición: los que <strong>SÍ</strong> funcionan</p>
+
+      <p class="hero-sub">Nos metimos hasta el fondo de los comentarios para separar el hype real del puro FOMO. Estos 3 sobrevivieron el filtro. 👇</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="section-label">
+        🛍️ <span>La selección de hoy</span>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+
+      <div class="grid">
+
+        <!-- CARD 1 — Belleza -->
+        <article class="card">
+          <div class="card-media media-1">
+            <span class="media-icon" aria-hidden="true">🧴</span>
+            <span class="badge badge-pink">Belleza</span>
+          </div>
+          <div class="card-body">
+            <p class="card-product">Biodance Mask</p>
+            <h3 class="card-title">TikTok: ¿Milagro o puro hype?</h3>
+            <p class="card-review">La había visto por todos lados en TikTok y, siendo sincera, pensé que podía ser puro hype 👀. Pero después de revisar las opiniones y resultados de quienes la han probado, parece que sí cumple con lo que promete: deja la piel bastante hidratada, luminosa y con ese efecto <em>glass skin</em> tan bonito. Eso sí, el glow no es permanente y definitivamente no hace milagros. Aun así, entre tanto producto viral, esta parece ser de las que sí tienen algo que ofrecer. ✨</p>
+            <a href="https://www.amazon.com/Biodance-Bio-Collagen-Tightening-Hydrating-Molecular/dp/B0B2RM68G2" class="cta cta-pink" target="_blank" rel="noopener noreferrer sponsored">¿Te dio curiosidad? Mira cuánto cuesta y decide si se gana un lugar en tu skincare. →</a>
+          </div>
+        </article>
+
+        <!-- CARD 2 — Hogar -->
+        <article class="card">
+          <div class="card-media media-2">
+            <span class="media-icon" aria-hidden="true">🌀</span>
+            <span class="badge badge-cyan">Hogar</span>
+          </div>
+          <div class="card-body">
+            <p class="card-product">Electric Spin Scrubber</p>
+            <h3 class="card-title">TikTok: ¿De verdad funciona?</h3>
+            <p class="card-review">Ok, este gadget parece de esos productos que compras porque se ven cool en internet… hasta que descubres que sí tienen utilidad 😂. El <em>Electric Spin Scrubber</em> está pensado para facilitar la limpieza de baños, azulejos y otras superficies donde normalmente tienes que tallar bastante. Las reseñas destacan sobre todo que ayuda a ahorrar esfuerzo y tiempo, así que no parece ser simplemente otro producto viral. ¿Imprescindible? Probablemente no. ¿Útil? Definitivamente sí. 👀</p>
+            <a href="https://www.amazon.com/Electric-Scrubber-Leebein-Replaceable-Adjustable/dp/B09P51V2LH" class="cta cta-cyan" target="_blank" rel="noopener noreferrer sponsored">Si quieres saber si este pequeño gadget vale lo que cuesta, haz clic y revisa su precio. →</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 — Hogar -->
+        <article class="card">
+          <div class="card-media media-3">
+            <span class="media-icon" aria-hidden="true">🧶</span>
+            <span class="badge badge-cyan">Hogar</span>
+          </div>
+          <div class="card-body">
+            <p class="card-product">Fabric Shaver</p>
+            <h3 class="card-title">TikTok: el gadget que sí funciona</h3>
+            <p class="card-review">Este es uno de esos productos que parecen totalmente innecesarios… hasta que ves la diferencia que hace en una prenda llena de bolitas 😭. El <em>Fabric Shaver</em> ayuda a quitar el <em>pilling</em> y las pelusas que hacen que sweaters y otras prendas se vean mucho más viejas de lo que realmente están. Las reseñas son bastante buenas y, aunque no va a convertir cualquier prenda vieja en una nueva, sí parece cumplir muy bien con su función. Para mí, este no se queda solo en el hype. ✨</p>
+            <a href="https://www.amazon.com/BEAUTURAL-Defuzzer-2-Speeds-Replaceable-Stainless/dp/B01NAQD0KD" class="cta cta-cyan" target="_blank" rel="noopener noreferrer sponsored">Antes de dejarlo pasar, mira cuánto cuesta: quizá sea justo lo que tu ropa estaba necesitando. →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Hecho con 🩷 para las que viven pegadas al FYP. <strong>Los precios y la disponibilidad pueden variar</strong> — revisa siempre en la tienda antes de comprar.
+  </footer>
+
+</body>
+</html>
